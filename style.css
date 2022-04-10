@@ -1,0 +1,106 @@
+@import url(https://fonts.googleapis.com/css?family=Rancho&effect=shadow-multiple);
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    height: 150vh;
+    margin: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background: rgb(222,248,251);
+    background: linear-gradient(103deg, rgba(222,248,251,1) 45%, rgba(236,197,212,0.9612219887955182) 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: -60px;
+}
+
+.music-container{
+    background-color: hsl(195, 55%, 83%);
+    border-radius: 15px;
+    box-shadow: 0 20px 20px 0 rgba(236,197,212,0.9612219887955182);
+    display:flex ; 
+    padding: 10px 30px ;
+    position:relative ;
+    z-index: 10;
+}
+
+.img-container img{
+    border-radius: 50%;
+    border: 4px solid black;
+    animation: rotate 25s linear infinite;
+    animation-play-state: paused;
+}
+
+.music-container.play .img-container img {
+    animation-play-state: running;
+}
+
+@keyframes rotate{
+    from{
+        tranform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg) ;
+    }
+}
+
+.img-container::after{
+    content: '' ;
+    background-color: hsl(195, 55%, 83%);
+    height:70px;
+    width:70px;
+    position: absolute;
+    left:50%;
+    bottom:50%;
+    border-radius: 50%;
+    transform:translate(-56% ,50%);
+    border: 2px solid black;
+   
+}
+
+.navigation{
+    display: block;
+    margin-left:auto;
+    margin-right: auto;
+    width: 25%;
+    padding: 20px 0px ;
+    
+}
+
+.action-btn{
+    font-size: 20px;
+    cursor: pointer;
+
+}
+.action-btn-big{
+    font-size: 30px;
+}
+
+.music-info{
+    background-color: rgb(175, 242, 251);
+    border-radius: 15px 15px 0 0;
+    position:relative;
+    top: 0 ;
+    left: 20px;
+    width: calc(100% -40px) ; 
+   
+}
+
+.progress-container{
+    background-color: aliceblue;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px 0 ;
+    height: 4px;
+    width: 100%;
+}
+ .progress{
+     background-color: bisque;
+     border-radius: 5px;
+     height: 100% ;
+     width: 0% ;
+     transition: width 0.1s linear;
+ }
